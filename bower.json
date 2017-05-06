@@ -1,7 +1,6 @@
 {
   "name": "imdb",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple web app to compare two movies",
   "authors": [
     "ganeshmkumar <ganeshkumar.m1996@gmail.com>"
   ],
