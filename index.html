@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>1 on 1</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">1 on 1</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/ganeshmkumar" target="_blank"><span class="fa fa-github"></span>  Github</a></li>
+                <li><a href="mailto:ganeshkumar.m1996@gmail.com"><span class="fa fa-envelope"></span>  Email</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <section class="container-fluid" ng-app="1on1" ng-controller="PopulateController" id="main">
+            <form role="form">
+                <div class="row">
+                    <div class="col-md-5 form-group">
+                        <input class="form-control" type="text" id="inp-movie1" ng-model="movie1" placeholder="First Movie" ng-change="change()">
+                        <span class="col-md-5 empty-movie" ng-show="movie1Empty">Please enter movie 1</span>
+                    </div>
+                    <div class="col-md-5 form-group">
+                        <input class="form-control" type="text" id="inp-movie2" ng-model="movie2" placeholder="Second Movie" ng-change="change()">
+                        <span class="col-md-5  empty-movie" ng-show="movie2Empty">Please enter the movie 2</span>
+                    </div>
+                    <div class="col-md-2 form-group">
+                        <button class="btn btn-block btn-success" ng-click="populate()">Compare</button>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+            </form>
+            <div class="row" id="result">
+                    <div class="col-md-6 not-found" ng-show="movie1NotFound">
+                        <h1><i class="fa fa-warning"></i> Not Found</h1>
+                    </div>
+                    <div class="col-md-5" id="movie1" ng-show="showMovie1">
+                        <img ng-src="{{movie1Result.Poster}}" alt="{{movie1Result.Title}}" class="img img-circle">
+                        <h1>{{movie1Result.Title}}</h1>
+                        <h5>{{movie1Result.Year}}</h5>
+                        <div class="row">
+                            <span class="col-md-4"><i class="fa fa-language"></i> {{movie1Result.Language}}</span>
+                            <span class="col-md-4"><i class="fa fa-list"></i> {{movie1Result.Genre}}</span>
+                            <span class="col-md-4"><i class="fa fa-star"></i> {{movie1Result.imdbRating}}/ 10</span>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>{{movie1Result.Plot}}</p>
+                            </div>
+                        </div><hr>
+                        <div class="row">
+                            <div class="col-md-4">
+                               <h4>Actors</h4>
+                               <span>{{movie1Result.Actors}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Director</h4>
+                                <span>{{movie1Result.Director}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Writers</h4>
+                                <span>{{movie1Result.Writer}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 not-found" ng-show="movie2NotFound">
+                        <h1><i class="fa fa-warning"></i> Not Found</h1>
+                    </div>
+                    <div class="col-md-5 col-md-offset-2" id="movie2" ng-show="showMovie2">
+                        <img ng-src="{{movie2Result.Poster}}" alt="{{movie2Result.Title}}" class="img img-circle">
+                        <h1>{{movie2Result.Title}}</h1>
+                        <h5>{{movie2Result.Year}}</h5>
+                        <div class="row">
+                            <span class="col-md-4"><i class="fa fa-language"></i> {{movie2Result.Language}}</span>
+                            <span class="col-md-4"><i class="fa fa-list"></i> {{movie2Result.Genre}}</span>
+                            <span class="col-md-4"><i class="fa fa-star"></i> {{movie2Result.imdbRating}}/ 10</span>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>{{movie2Result.Plot}}</p>
+                            </div>
+                        </div><hr>
+                        <div class="row">
+                            <div class="col-md-4">
+                               <h4>Actors</h4>
+                               <span>{{movie2Result.Actors}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Director</h4>
+                                <span>{{movie2Result.Director}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Writers</h4>
+                                <span>{{movie2Result.Writer}}</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    </body>
+</html>

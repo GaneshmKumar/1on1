@@ -1,0 +1,49 @@
+/*
+* @Author: GaNeShKuMaRm
+* @Date:   2017-05-06 15:24:08
+* @Last Modified by:   GaNeShKuMaRm
+* @Last Modified time: 2017-05-06 21:51:50
+*/
+
+body {
+    font-family: 'Montserrat';
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.empty-movie {
+    margin-top: 5px;
+}
+
+#result {
+    margin: 0 2px;
+}
+
+#movie1, #movie2 {
+    background-color: #fafafa;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+    border: solid 1px #f1f1f1;
+    text-align: center;
+    box-shadow: 0 0 2px #616161;
+}
+
+.not-found {
+    text-align: center;
+
+}
+.img-circle {
+    width: 150px;
+    height: 150px;
+}
+
+.fa-github, .fa-envelope {
+    font-size: 20px;
+    margin-right: 2px;
+}
+
+.navbar-nav li a:hover, .navbar-brand {
+    transition: linear .7s;
+}
